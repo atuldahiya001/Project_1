@@ -1,0 +1,64 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+let NFTs = []
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT(_Name , _Uid, _Section, _Group, _Cgpa) {
+	
+	const NFT = {
+		"Name" : _Name,
+		"Uid" : _Uid,
+		"Section" : _Section,
+		"Group" : _Group,
+        "Cgpa"  : _Cgpa
+
+	}
+	NFTs.push(NFT);
+	console.log("Minted: " + _Name);
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs() {
+	for(let i = 0;i<NFTs.length;i++) {
+		console.log("\nName: "+NFTs[i].Name);
+		console.log("Uid: "+NFTs[i].Uid);
+		console.log("Section: "+NFTs[i].Section);
+		console.log("Group: "+NFTs[i].Group);
+        console.log("Cgpa: "+NFTs[i].Cgpa);
+	}
+
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+	console.log("Total Supply: "+NFTs.length);
+}
+
+// call your functions below this line
+
+mintNFT("Atul", "21BCS7592", "717", "B", "8.33");
+mintNFT("Aryan", "21BCS1412", "717", "A", "8.43");
+mintNFT("Varsha", "21BCS1111", "717", "A", "8.09");
+mintNFT("Puneet", "21BCS1000", "717", "A", "8.67");
+mintNFT("Rahul", "21BCS8900", "717", "B", "7.01");
+mintNFT("Harsh", "21BCS1000", "717", "B", "6.99");
+mintNFT("Pooja", "21BCS6711", "717", "B", "7.89");
+mintNFT("Simran", "21BCS1011", "717", "B", "5.90");
+mintNFT("Diya", "21BCS7149", "717", "B", "7.90");
+mintNFT("Raju", "21BCS7492", "717", "B", "6.30");
+
+listNFTs();
+console.log("\n");
+getTotalSupply();
